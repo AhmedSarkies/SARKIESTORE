@@ -11,7 +11,8 @@ export default [
     name: "admin",
     component: AdminView,
     meta: {
-      // needsAuth: true,
+      needsAuth: true,
+      isAdmin: true,
     },
     children: [
       {
@@ -19,7 +20,8 @@ export default [
         name: "orders",
         component: OrdersView,
         meta: {
-          // needsAuth: true,
+          needsAuth: true,
+          isAdmin: true,
         },
       },
       {
@@ -27,7 +29,8 @@ export default [
         name: "productsAdmin",
         component: ProductsView,
         meta: {
-          // needsAuth: true,
+          needsAuth: true,
+          isAdmin: true,
         },
       },
       {
@@ -35,7 +38,8 @@ export default [
         name: "categoriesAdmin",
         component: CategoriesView,
         meta: {
-          // needsAuth: true,
+          needsAuth: true,
+          isAdmin: true,
         },
       },
     ],

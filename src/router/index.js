@@ -20,20 +20,20 @@ const router = new VueRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.meta.needsAuth) {
-    next("/login");
-  } else {
-    if (
-      to.path === "/admin/productsAdmin" ||
-      to.path === "/admin/categoriesAdmin" ||
-      to.path === "/admin/orders"
-    ) {
-      next("/home");
-    } else {
-      next();
-    }
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.needsAuth) {
+//     next("/login");
+//   } else {
+//     if (
+//       to.path === "/admin/productsAdmin" ||
+//       to.path === "/admin/categoriesAdmin" ||
+//       to.path === "/admin/orders"
+//     ) {
+//       next("/home");
+//     } else {
+//       next();
+//     }
+//   }
+// });
 
 export default router;
