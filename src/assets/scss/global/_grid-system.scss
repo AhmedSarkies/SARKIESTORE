@@ -1,0 +1,50 @@
+$cols: 12;
+$sizes: (
+  ("xs", 0px),
+  ("sm", 576px),
+  ("md", 768px),
+  ("lg", 992px),
+  ("xl", 1200px),
+  ("xxl", 1400px)
+);
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@mixin colWidth($width) {
+  width: $width;
+  max-width: $width;
+  flex: $width;
+}
+
+@each $size, $minWidth in $sizes {
+  @media (min-width: $minWidth) {
+    @for $col from 1 through $cols {
+      .col-#{$size}-#{$col} {
+        @include colWidth((($col / $cols) * 100) + 0%);
+        padding: 15px;
+      }
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}

@@ -1,30 +1,39 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import AdminRoutes from "./Admin";
+import ClientRoutes from "./Client";
 
 Vue.use(VueRouter);
 
-const routes = [
+const baseRoutes = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/base",
+    name: "base",
   },
 ];
+
+const routes = [...baseRoutes, ...AdminRoutes, ...ClientRoutes];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.needsAuth) {
+    next("/login");
+  } else {
+    if (
+      to.path === "/admin/productsAdmin" ||
+      to.path === "/admin/categoriesAdmin" ||
+      to.path === "/admin/orders"
+    ) {
+      next("/home");
+    } else {
+      next();
+    }
+  }
 });
 
 export default router;

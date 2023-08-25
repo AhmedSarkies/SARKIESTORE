@@ -1,0 +1,9 @@
+export { default as CardVue } from "./CardVue.vue";
+export { default as CartVue } from "./CartVue.vue";
+export { default as CategoriesVue } from "./CategoriesVue.vue";
+export { default as ContactVue } from "./ContactVue.vue";
+export { default as FeaturedProductsVue } from "./FeaturedProductsVue.vue";
+export { default as FooterVue } from "./FooterVue.vue";
+export { default as ListVue } from "./ListVue.vue";
+export { default as NavbarVue } from "./NavbarVue.vue";
+export { default as SliderVue } from "./SliderVue.vue";

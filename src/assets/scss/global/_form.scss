@@ -1,0 +1,20 @@
+.form-input-holder {
+  display: block;
+  margin-bottom: 10px;
+
+  .input-title {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .form-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px 12px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
