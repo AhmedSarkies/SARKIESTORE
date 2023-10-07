@@ -14,16 +14,16 @@ export default [
       needsAuth: true,
     },
     children: [
+      // {
+      //   path: "login",
+      //   name: "login",
+      //   component: LoginView,
+      //   meta: {
+      //     needsAuth: false,
+      //   },
+      // },
       {
-        path: "login",
-        name: "login",
-        component: LoginView,
-        meta: {
-          needsAuth: false,
-        },
-      },
-      {
-        path: "home",
+        path: "/",
         name: "home",
         component: HomeVue,
         meta: {
