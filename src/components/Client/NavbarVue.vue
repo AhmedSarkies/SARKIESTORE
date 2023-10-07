@@ -32,11 +32,11 @@
         </div>
       </div>
       <div class="center">
-        <RouterLink class="link" to="/home"> SARKIESTORE </RouterLink>
+        <RouterLink class="link" to="/"> SARKIESTORE </RouterLink>
       </div>
       <div class="right">
         <div class="item">
-          <RouterLink class="link" to="/home"> Homepage </RouterLink>
+          <RouterLink class="link" to="/"> Homepage </RouterLink>
         </div>
         <div class="item">
           <RouterLink class="link" to="/about"> About </RouterLink>
